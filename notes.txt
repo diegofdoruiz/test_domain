@@ -11,5 +11,4 @@ public function getView($subdoamin, $page=NULL)
     return view('inicio', ['subdoamin' => $subdoamin]);
 }
 
-//para crear el dominio, dentro del proyecto
-composer require laravel/valet
+php artisan serve --host 0.0.0.0 --port 8000
