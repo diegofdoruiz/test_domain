@@ -1,0 +1,15 @@
+Prueba para los subdominios
+
+//Ruta
+Route::group(['domain' => '{subdomain}.lvh.me'], function(){
+    Route::get('/{page?}', 'FrontEndController@getView');
+});
+
+//controaldor
+public function getView($subdoamin, $page=NULL)
+{
+    return view('inicio', ['subdoamin' => $subdoamin]);
+}
+
+//para crear el dominio, dentro del proyecto
+composer require laravel/valet
