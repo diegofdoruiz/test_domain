@@ -15,12 +15,14 @@ Route::group(['domain' => 'cohett.tk'], function(){
 	Route::get('/', function () {
         return view('welcome');
     });
+    Route::get('/home', 'HomeController@index')->name('home');
 });
 
 Route::group(['domain' => 'www.cohett.tk'], function(){
 	Route::get('/', function () {
         return view('welcome');
     });
+    Route::get('/home', 'HomeController@index')->name('home');
     
 });
 
@@ -41,6 +43,7 @@ Route::group(['domain' => '{domain}'], function(){
 				    <p>Dominio: '.$array_url[1].'.'.$array_url[2].'</p>';
 		}
 	});
+
 });
 
 /*Route::group(['domain' => '{subdomain}.app.{domain}'], function(){
@@ -50,10 +53,6 @@ Route::group(['domain' => '{domain}'], function(){
 Route::group(['domain' => '{domain}'], function(){
     Route::get('/{page?}', 'FrontEndController@outDomain');
 });*/
-
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
